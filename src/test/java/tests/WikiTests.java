@@ -22,6 +22,7 @@ public class WikiTests extends TestBase {
             $(accessibilityId("Search Wikipedia")).click();
             $(id("org.wikipedia.alpha:id/search_src_text")).sendKeys("Appium");
         });
+
         step("Verify content found", () ->
                 $$(id("org.wikipedia.alpha:id/page_list_item_title"))
                         .shouldHave(sizeGreaterThan(0)));
@@ -53,6 +54,4 @@ public class WikiTests extends TestBase {
             $(className("android.widget.TextView")).shouldHave(text("Error"));
         });
     }
-
-
 }
